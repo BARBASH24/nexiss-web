@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 export const Hero: React.FC = () => {
   return (
@@ -67,6 +68,13 @@ export const Hero: React.FC = () => {
                     СКАЧАТЬ БЕСПЛАТНО
                   </span>
                 </a>
+                
+                <Link 
+                  to="/dashboard"
+                  className="group px-10 py-5 border-2 border-white/20 text-white text-lg font-bold rounded-2xl hover:bg-white/5 hover:border-white/40 transition-all duration-300"
+                >
+                  ПОПРОБОВАТЬ ОНЛАЙН
+                </Link>
               </div>
 
               {/* Features list */}
