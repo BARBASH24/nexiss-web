@@ -47,43 +47,23 @@ export const Hero: React.FC = () => {
                   <br />
                   с первого раза
                 </p>
-                <p className="text-lg sm:text-xl text-white/50">
-                  Среда разработки с умным помощником для запуска и исправления ошибок
+                <p className="text-base sm:text-lg text-white/60 leading-relaxed max-w-xl">
+                  Среда разработки с умным помощником для запуска и исправления ошибок в Python и ML-проектах
+                </p>
+                <p className="text-base sm:text-lg text-white/50 font-bold">
+                  Меньше настройки. Меньше ошибок. Больше результата.
                 </p>
               </div>
 
-              {/* Features list */}
+              {/* Tech stack */}
               <div 
-                className="flex flex-col sm:flex-row gap-4 animate-fade-in"
+                className="space-y-4 animate-fade-in"
                 style={{ animationDelay: '0.5s', opacity: 0 }}
-              >
-                <a 
-                  href="#download"
-                  className="group relative px-10 py-5 bg-white text-black text-lg font-bold rounded-2xl overflow-hidden transition-all duration-300 hover:scale-105"
-                >
-                  <span className="relative z-10">СКАЧАТЬ БЕСПЛАТНО</span>
-                  <div className="absolute inset-0 bg-black transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-300 rounded-2xl"></div>
-                  <span className="absolute inset-0 flex items-center justify-center text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-20">
-                    СКАЧАТЬ БЕСПЛАТНО
-                  </span>
-                </a>
+                  >
+                <p className="text-sm text-white/40">
+                  Работа с локальными проектами без сложной настройки
+                </p>
               </div>
-
-              {/* Features list */}
-              <div 
-                className="flex flex-wrap gap-6 text-sm text-white/40 animate-fade-in"
-                style={{ animationDelay: '0.7s', opacity: 0 }}
-              >
-                {['Python', 'PyTorch', 'TensorFlow', 'scikit-learn', 'pandas', 'NumPy'].map((tech, i) => (
-                  <div key={i} className="flex items-center space-x-2">
-                    <div className="w-1 h-1 bg-white/40 rounded-full"></div>
-                    <span className="uppercase tracking-wider">{tech}</span>
-                  </div>
-                ))}
-              </div>
-              <p className="text-sm text-white/40 mt-4">
-                Работа с локальными проектами без сложной настройки
-              </p>
             </div>
 
             {/* Right side - Brutalist geometric design */}
