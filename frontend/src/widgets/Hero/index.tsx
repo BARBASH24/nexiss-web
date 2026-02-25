@@ -27,7 +27,7 @@ export const Hero: React.FC = () => {
           <div className="grid lg:grid-cols-2 gap-16 items-center mb-16">
             <div className="space-y-8">
               <div className="space-y-6">
-                <h1 className="text-7xl md:text-8xl font-black leading-none tracking-tighter">
+                <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-black leading-none tracking-tighter">
                   <div className="overflow-hidden">
                     <div className="animate-slide-up">NEXISS</div>
                   </div>
@@ -35,24 +35,24 @@ export const Hero: React.FC = () => {
                 
                 <div className="flex items-center space-x-4">
                   <div className="h-px flex-1 bg-white/20"></div>
-                  <span className="text-2xl font-light text-white/40 tracking-widest">IDE</span>
+                  <span className="text-xl sm:text-2xl font-light text-white/40 tracking-widest">IDE</span>
                   <div className="h-px flex-1 bg-white/20"></div>
                 </div>
               </div>
 
               {/* Subtitle */}
               <div className="space-y-4 animate-fade-in" style={{ animationDelay: '0.3s', opacity: 0 }}>
-                <p className="text-2xl md:text-3xl font-light text-white/80 leading-relaxed">
-                  Искусственный интеллект
+                <p className="text-xl sm:text-2xl md:text-3xl font-light text-white/80 leading-relaxed">
+                  Python, который запускается
                   <br />
-                  встречается с кодом
+                  с первого раза
                 </p>
-                <p className="text-xl text-white/50">
-                  Будущее разработки — сегодня
+                <p className="text-lg sm:text-xl text-white/50">
+                  Среда разработки с умным помощником для запуска и исправления ошибок
                 </p>
               </div>
 
-              {/* CTA Buttons */}
+              {/* Features list */}
               <div 
                 className="flex flex-col sm:flex-row gap-4 animate-fade-in"
                 style={{ animationDelay: '0.5s', opacity: 0 }}
@@ -74,13 +74,16 @@ export const Hero: React.FC = () => {
                 className="flex flex-wrap gap-6 text-sm text-white/40 animate-fade-in"
                 style={{ animationDelay: '0.7s', opacity: 0 }}
               >
-                {['Python 3.12', 'TensorFlow', 'PyTorch', 'Jupyter'].map((tech, i) => (
+                {['Python', 'PyTorch', 'TensorFlow', 'scikit-learn', 'pandas', 'NumPy'].map((tech, i) => (
                   <div key={i} className="flex items-center space-x-2">
                     <div className="w-1 h-1 bg-white/40 rounded-full"></div>
                     <span className="uppercase tracking-wider">{tech}</span>
                   </div>
                 ))}
               </div>
+              <p className="text-sm text-white/40 mt-4">
+                Работа с локальными проектами без сложной настройки
+              </p>
             </div>
 
             {/* Right side - Brutalist geometric design */}
