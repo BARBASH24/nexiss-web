@@ -1,0 +1,50 @@
+# Backend (не включаем в landing ветку)
+backend/
+
+# Dependencies
+node_modules/
+frontend/node_modules/
+
+# Build outputs
+dist/
+build/
+.next/
+out/
+
+# Environment variables
+.env
+.env.local
+.env.production
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Docker
+docker-compose.yml
+
+# Документация (оставляем только нужную)
+GOOGLE_OAUTH_SETUP.md
+GOOGLE_OAUTH_WORKAROUND.md
+OAUTH_SETUP_GUIDE.md
+QUICK_GOOGLE_SETUP.md
+QUICK_START.md
+README_OAUTH.md
+READY_TO_USE.md
+SETUP_INSTRUCTIONS.md
+SETUP_OAUTH_CREDENTIALS.md
+БЫСТРАЯ_НАСТРОЙКА_OAUTH.md
+Практическая_работа_19_решение.md
