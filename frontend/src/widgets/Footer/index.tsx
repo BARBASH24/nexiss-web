@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { Link } from 'react-router-dom'
 
 export const Footer: React.FC = () => {
   const [mousePos, setMousePos] = useState({ x: 0, y: 0 })
@@ -58,10 +59,10 @@ export const Footer: React.FC = () => {
         </div>
         
         {/* Main content grid */}
-        <div className="grid md:grid-cols-2 gap-12 mb-12">
+        <div className="grid md:grid-cols-5 gap-12 mb-12">
           
           {/* Brand section */}
-          <div className="space-y-6">
+          <div className="md:col-span-2 space-y-6">
             <p className="text-base text-white/50 leading-relaxed max-w-sm">
               Создано на Rust с AI технологиями для максимальной производительности
             </p>
@@ -89,16 +90,52 @@ export const Footer: React.FC = () => {
             </div>
           </div>
 
-          {/* Contact */}
-          <div className="space-y-4">
-            <h4 className="text-xs font-black uppercase tracking-widest text-white/30">
-              Контакты
-            </h4>
-            <div className="space-y-2">
-              <a href="mailto:hello@nexiss.dev" className="block text-sm text-white/50 hover:text-white transition-colors">
-                hello@nexiss.dev
-              </a>
-            </div>
+          {/* Links sections */}
+          <div className="md:col-span-3 grid grid-cols-2 md:grid-cols-3 gap-8">
+            {[
+              {
+                title: 'Продукт',
+                links: [
+                  { label: 'Скачать', path: '/download' },
+                  { label: 'Возможности', path: '/features' },
+                  { label: 'Цены', path: '/pricing' }
+                ]
+              },
+              {
+                title: 'Ресурсы',
+                links: [
+                  { label: 'Документация', path: '/docs' },
+                  { label: 'API', path: '/api' },
+                  { label: 'Туториалы', path: '/tutorials' }
+                ]
+              },
+              {
+                title: 'Компания',
+                links: [
+                  { label: 'О нас', path: '/about' },
+                  { label: 'Карьера', path: '/careers' },
+                  { label: 'Контакты', path: '/contact' }
+                ]
+              }
+            ].map((section, i) => (
+              <div key={i} className="space-y-4">
+                <h4 className="text-xs font-black uppercase tracking-widest text-white/30">
+                  {section.title}
+                </h4>
+                <ul className="space-y-2">
+                  {section.links.map((link, j) => (
+                    <li key={j}>
+                      <Link
+                        to={link.path}
+                        className="text-sm text-white/50 hover:text-white transition-colors"
+                      >
+                        {link.label}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
           </div>
         </div>
 
@@ -108,6 +145,10 @@ export const Footer: React.FC = () => {
           <div className="pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-white/30">
             <div className="flex items-center gap-4">
               <span>© 2026 nexiss</span>
+              <span className="text-white/10">•</span>
+              <a href="#" className="hover:text-white transition-colors">Конфиденциальность</a>
+              <span className="text-white/10">•</span>
+              <a href="#" className="hover:text-white transition-colors">Условия</a>
             </div>
             <div className="font-mono text-white/20">
               Made with AI • Powered by Rust
