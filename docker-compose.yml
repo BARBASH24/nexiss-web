@@ -1,0 +1,55 @@
+version: '3.8'
+
+services:
+  postgres:
+    image: postgres:15-alpine
+    container_name: nexiss-db
+    environment:
+      POSTGRES_USER: nexiss
+      POSTGRES_PASSWORD: nexiss_password
+      POSTGRES_DB: nexiss_db
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    networks:
+      - nexiss-network
+
+  backend:
+    build: ./backend
+    container_name: nexiss-backend
+    environment:
+      DATABASE_URL: postgresql://nexiss:nexiss_password@postgres:5432/nexiss_db
+      JWT_SECRET: your-secret-key-change-in-production
+      PORT: 3001
+    ports:
+      - "3001:3001"
+    depends_on:
+      - postgres
+    networks:
+      - nexiss-network
+    volumes:
+      - ./backend:/app
+      - /app/node_modules
+
+  frontend:
+    image: node:18-alpine
+    container_name: nexiss-frontend
+    working_dir: /app
+    command: sh -c "npm install && npm run dev -- --host"
+    ports:
+      - "5173:5173"
+    networks:
+      - nexiss-network
+    volumes:
+      - ./frontend:/app
+      - /app/node_modules
+    environment:
+      - VITE_API_URL=http://localhost:3001
+
+volumes:
+  postgres_data:
+
+networks:
+  nexiss-network:
+    driver: bridge
