@@ -1,4 +1,5 @@
 ﻿import React, { useState, useEffect } from 'react'
+import { Link } from 'react-router-dom'
 
 export const Header: React.FC = () => {
   const [scrolled, setScrolled] = useState(false)
@@ -96,6 +97,12 @@ export const Header: React.FC = () => {
             </a>
 
             <div className="hidden lg:flex items-center space-x-4">
+              <Link
+                to="/login"
+                className="px-6 py-3 text-sm font-bold uppercase tracking-wider text-white/80 hover:text-white transition-all"
+              >
+                Войти
+              </Link>
               <button
                 onClick={() => setMenuOpen(true)}
                 className="px-6 py-3 text-sm font-bold uppercase tracking-wider text-white/80 hover:text-white transition-all"
@@ -104,14 +111,22 @@ export const Header: React.FC = () => {
               </button>
             </div>
 
-            <button
-              onClick={() => setMenuOpen(true)}
-              className="lg:hidden relative w-10 h-10 flex flex-col items-center justify-center space-y-1.5 group"
-            >
-              <span className="w-6 h-0.5 bg-white"></span>
-              <span className="w-6 h-0.5 bg-white"></span>
-              <span className="w-6 h-0.5 bg-white"></span>
-            </button>
+            <div className="lg:hidden flex items-center space-x-4">
+              <Link
+                to="/login"
+                className="px-4 py-2 text-sm font-bold uppercase tracking-wider text-white/80 hover:text-white transition-all"
+              >
+                Войти
+              </Link>
+              <button
+                onClick={() => setMenuOpen(true)}
+                className="relative w-10 h-10 flex flex-col items-center justify-center space-y-1.5 group"
+              >
+                <span className="w-6 h-0.5 bg-white"></span>
+                <span className="w-6 h-0.5 bg-white"></span>
+                <span className="w-6 h-0.5 bg-white"></span>
+              </button>
+            </div>
           </div>
         </nav>
 
