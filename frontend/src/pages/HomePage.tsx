@@ -3,6 +3,7 @@ import { Header } from '../widgets/Header'
 import { Hero } from '../widgets/Hero'
 import { Footer } from '../widgets/Footer'
 import { KeyBenefits } from '../widgets/KeyBenefits'
+import { Download } from '../widgets/Download'
 
 const InterfaceDemo: React.FC = () => {
   return (
@@ -413,6 +414,7 @@ export const HomePage: React.FC = () => {
       <AboutNexiss />
       <Testimonials />
       <FAQ />
+      <Download />
       <Footer />
     </div>
   )
