@@ -44,6 +44,7 @@ export const KeyBenefits: React.FC = () => {
 
   return (
     <section 
+      id="benefits"
       className="relative h-screen flex items-center justify-center px-6 bg-black overflow-hidden"
     >
       {/* Animated grid background */}
@@ -65,17 +66,17 @@ export const KeyBenefits: React.FC = () => {
 
       <div className="relative container mx-auto max-w-6xl">
         {/* Header */}
-        <div className="text-center mb-12">
-          <h2 className="text-5xl md:text-7xl font-black leading-none tracking-tighter mb-2">
+        <div className="text-center mb-12 px-4">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-black leading-none tracking-tighter mb-2">
             ПОЧЕМУ
           </h2>
-          <h3 className="text-3xl md:text-5xl font-black text-white/20 tracking-tighter">
+          <h3 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black text-white/20 tracking-tighter">
             NEXISS
           </h3>
         </div>
 
         {/* Benefits Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-5xl mx-auto">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-5xl mx-auto">
           {benefits.map((benefit, i) => (
             <div 
               key={i}
@@ -83,7 +84,7 @@ export const KeyBenefits: React.FC = () => {
               onMouseEnter={() => setHoveredIndex(i)}
               onMouseLeave={() => setHoveredIndex(null)}
             >
-              <div className="relative bg-white/[0.02] border border-white/10 rounded-2xl p-6 overflow-hidden transition-all duration-300 hover:bg-white/[0.05] hover:border-white/30">
+              <div className="relative bg-white/[0.02] border border-white/10 rounded-2xl p-4 sm:p-6 overflow-hidden transition-all duration-300 hover:bg-white/[0.05] hover:border-white/30">
                 {/* Icon */}
                 <div className="relative z-10 mb-4 text-white/60 group-hover:text-white group-hover:scale-110 transition-all duration-300">
                   {benefit.icon}
@@ -91,10 +92,10 @@ export const KeyBenefits: React.FC = () => {
                 
                 {/* Content */}
                 <div className="relative z-10">
-                  <h3 className="text-2xl font-black mb-2">
+                  <h3 className="text-xl sm:text-2xl font-black mb-2">
                     {benefit.title}
                   </h3>
-                  <p className="text-sm text-white/60 leading-relaxed">
+                  <p className="text-xs sm:text-sm text-white/60 leading-relaxed">
                     {benefit.desc}
                   </p>
                 </div>

@@ -1,5 +1,4 @@
 import React, { useState } from 'react'
-import { Link } from 'react-router-dom'
 
 export const Footer: React.FC = () => {
   const [mousePos, setMousePos] = useState({ x: 0, y: 0 })
@@ -35,9 +34,9 @@ export const Footer: React.FC = () => {
       <div className="relative container mx-auto max-w-7xl px-6 py-20">
         
         {/* Giant animated NEXISS */}
-        <div className="mb-20 overflow-hidden text-center">
+        <div className="mb-20 overflow-hidden text-center px-4">
           <h2 
-            className="text-[8rem] md:text-[12rem] lg:text-[14rem] font-black text-center leading-none tracking-tighter select-none"
+            className="text-[4rem] sm:text-[6rem] md:text-[10rem] lg:text-[14rem] font-black text-center leading-none tracking-tighter select-none"
             style={{
               transform: `perspective(1000px) rotateX(${mousePos.y * 5}deg) rotateY(${mousePos.x * 5}deg)`,
               transition: 'transform 0.3s ease-out'
@@ -51,91 +50,49 @@ export const Footer: React.FC = () => {
             <span className="inline-block hover:text-white/50 transition-colors duration-300">S</span>
           </h2>
           
-          <div className="flex items-center justify-center space-x-6 mt-8">
-            <div className="h-px w-24 bg-white/20"></div>
-            <p className="text-sm text-white/40 uppercase tracking-[0.3em]">IDE нового поколения</p>
-            <div className="h-px w-24 bg-white/20"></div>
+          <div className="flex items-center justify-center space-x-4 sm:space-x-6 mt-8">
+            <div className="h-px w-12 sm:w-24 bg-white/20"></div>
+            <p className="text-xs sm:text-sm text-white/40 uppercase tracking-[0.2em] sm:tracking-[0.3em]">IDE нового поколения</p>
+            <div className="h-px w-12 sm:w-24 bg-white/20"></div>
           </div>
         </div>
         
         {/* Main content grid */}
-        <div className="grid md:grid-cols-5 gap-12 mb-12">
+        <div className="grid md:grid-cols-2 gap-12 mb-12">
           
           {/* Brand section */}
-          <div className="md:col-span-2 space-y-6">
+          <div className="space-y-6">
             <p className="text-base text-white/50 leading-relaxed max-w-sm">
               Создано на Rust с AI технологиями для максимальной производительности
             </p>
 
-            {/* Social */}
+            {/* Social - Telegram */}
             <div className="flex space-x-3">
-              {[
-                { name: 'GitHub', icon: 'GH' },
-                { name: 'Twitter', icon: 'TW' },
-                { name: 'Discord', icon: 'DC' },
-                { name: 'LinkedIn', icon: 'LI' }
-              ].map((social, i) => (
-                <a
-                  key={i}
-                  href="#"
-                  className="group relative w-10 h-10 border border-white/10 flex items-center justify-center hover:border-white/30 transition-all rounded-2xl overflow-hidden"
-                  title={social.name}
-                >
-                  <span className="relative z-10 text-xs font-black text-white/40 group-hover:text-white transition-colors">
-                    {social.icon}
-                  </span>
-                  <div className="absolute inset-0 bg-white/5 transform scale-0 group-hover:scale-100 transition-transform duration-300 rounded-2xl"></div>
-                </a>
-              ))}
+              <a
+                href="https://t.me/nexiss_official"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group relative w-12 h-12 border border-white/10 flex items-center justify-center hover:border-white/30 transition-all rounded-2xl overflow-hidden"
+                title="Telegram"
+              >
+                <svg className="relative z-10 w-6 h-6 text-white/40 group-hover:text-white transition-colors" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.562 8.161c-.18 1.897-.962 6.502-1.359 8.627-.168.9-.5 1.201-.82 1.23-.697.064-1.226-.461-1.901-.903-1.056-.692-1.653-1.123-2.678-1.799-1.185-.781-.417-1.21.258-1.911.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.139-5.062 3.345-.479.329-.913.489-1.302.481-.428-.009-1.252-.242-1.865-.442-.752-.244-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.831-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635.099-.002.321.023.465.141.121.099.155.232.171.326.016.094.036.308.02.475z"/>
+                </svg>
+                <div className="absolute inset-0 bg-white/5 transform scale-0 group-hover:scale-100 transition-transform duration-300 rounded-2xl"></div>
+              </a>
             </div>
           </div>
 
-          {/* Links sections */}
-          <div className="md:col-span-3 grid grid-cols-2 md:grid-cols-3 gap-8">
-            {[
-              {
-                title: 'Продукт',
-                links: [
-                  { label: 'Скачать', path: '/download' },
-                  { label: 'Возможности', path: '/features' },
-                  { label: 'Цены', path: '/pricing' }
-                ]
-              },
-              {
-                title: 'Ресурсы',
-                links: [
-                  { label: 'Документация', path: '/docs' },
-                  { label: 'API', path: '/api' },
-                  { label: 'Туториалы', path: '/tutorials' }
-                ]
-              },
-              {
-                title: 'Компания',
-                links: [
-                  { label: 'О нас', path: '/about' },
-                  { label: 'Карьера', path: '/careers' },
-                  { label: 'Контакты', path: '/contact' }
-                ]
-              }
-            ].map((section, i) => (
-              <div key={i} className="space-y-4">
-                <h4 className="text-xs font-black uppercase tracking-widest text-white/30">
-                  {section.title}
-                </h4>
-                <ul className="space-y-2">
-                  {section.links.map((link, j) => (
-                    <li key={j}>
-                      <Link
-                        to={link.path}
-                        className="text-sm text-white/50 hover:text-white transition-colors"
-                      >
-                        {link.label}
-                      </Link>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            ))}
+          {/* Contact */}
+          <div className="space-y-4">
+            <h4 className="text-xs font-black uppercase tracking-widest text-white/30">
+              Контакты
+            </h4>
+            <div className="space-y-2">
+              <a href="mailto:nexisshelper@gmail.com" className="block text-sm text-white/50 hover:text-white transition-colors">
+                nexisshelper@gmail.com
+              </a>
+            </div>
           </div>
         </div>
 
@@ -145,10 +102,6 @@ export const Footer: React.FC = () => {
           <div className="pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-white/30">
             <div className="flex items-center gap-4">
               <span>© 2026 nexiss</span>
-              <span className="text-white/10">•</span>
-              <a href="#" className="hover:text-white transition-colors">Конфиденциальность</a>
-              <span className="text-white/10">•</span>
-              <a href="#" className="hover:text-white transition-colors">Условия</a>
             </div>
             <div className="font-mono text-white/20">
               Made with AI • Powered by Rust
